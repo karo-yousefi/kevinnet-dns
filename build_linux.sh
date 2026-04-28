@@ -31,6 +31,9 @@ echo "  OK"
 ADD_DATA=""
 [ -f "MasterDnsVPN"     ] && ADD_DATA="$ADD_DATA --add-data MasterDnsVPN:."     && echo "  Bundling: MasterDnsVPN"
 [ -f "MasterDnsVPN.exe" ] && ADD_DATA="$ADD_DATA --add-data MasterDnsVPN.exe:." && echo "  Bundling: MasterDnsVPN.exe"
+[ -d "constants" ] && ADD_DATA="$ADD_DATA --add-data constants:." && echo "  Bundling: constants"
+
+
 echo ""
 
 echo "[2/3] Building binary..."

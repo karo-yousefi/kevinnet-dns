@@ -32,6 +32,8 @@ echo [2/3] Building EXE...
 set ADD_DATA=
 if exist "MasterDnsVPN.exe" set ADD_DATA=%ADD_DATA% --add-data "MasterDnsVPN.exe;."
 if exist "MasterDnsVPN"     set ADD_DATA=%ADD_DATA% --add-data "MasterDnsVPN;."
+set ADD_DATA=%ADD_DATA% --add-data "constants;constants"
+
 
 python -m PyInstaller --onefile --windowed --name "KevinNet" --clean %ADD_DATA% "kevinnet.py"
 if errorlevel 1 ( echo [ERROR] Build failed. & pause & exit /b 1 )

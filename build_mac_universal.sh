@@ -49,6 +49,8 @@ echo ""
 COMMON_ARGS=(--onefile --clean)
 [ -f "MasterDnsVPN"     ] && COMMON_ARGS+=(--add-data "MasterDnsVPN:.")     && echo "  Bundling: MasterDnsVPN"
 [ -f "MasterDnsVPN.exe" ] && COMMON_ARGS+=(--add-data "MasterDnsVPN.exe:.") && echo "  Bundling: MasterDnsVPN.exe"
+[ -d "constants" ] && COMMON_ARGS+=(--add-data "constants:.") && echo "  Added constants"
+
 echo ""
 
 echo "[1/5] ARM venv + packages..."
